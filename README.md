@@ -2,7 +2,6 @@
 
 **KitmaiOx** (คิดไม่ออก) is a modern, AI-powered web application that helps you discover what to cook based on the ingredients you already have in your fridge. Built with a React frontend and a .NET 8 backend, it leverages Google's Gemini AI to instantly generate delicious recipe ideas, complete with steps and macros.
 
-![KitmaiOx Overview](https://via.placeholder.com/800x450.png?text=KitmaiOx+Screenshot) <!-- Replace with your actual screenshot -->
 
 ## 🚀 Features
 
