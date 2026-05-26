@@ -15,6 +15,7 @@ backend/bin/
 backend/obj/
 backend/appsettings.Development.json
 backend/appsettings.*.json
+!backend/appsettings.*.example.json
 *.user
 *.suo
 *.userprefs
