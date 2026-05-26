@@ -17,10 +17,10 @@ public sealed class GeminiService(HttpClient httpClient, IConfiguration configur
         string language,
         CancellationToken cancellationToken)
     {
-        var envKey = Environment.GetEnvironmentVariable("GEMINI_API_KEY");
+        var envKey = Environment.GetEnvironmentVariable("AI_API_KEY") ?? Environment.GetEnvironmentVariable("GEMINI_API_KEY");
         var apiKey = !string.IsNullOrWhiteSpace(envKey)
             ? envKey
-            : configuration["Gemini:ApiKey"];
+            : configuration["AI:ApiKey"] ?? configuration["Gemini:ApiKey"];
 
         if (string.IsNullOrWhiteSpace(apiKey))
         {
@@ -93,10 +93,10 @@ public sealed class GeminiService(HttpClient httpClient, IConfiguration configur
             };
         }
 
-        var envKey = Environment.GetEnvironmentVariable("GEMINI_API_KEY");
+        var envKey = Environment.GetEnvironmentVariable("AI_API_KEY") ?? Environment.GetEnvironmentVariable("GEMINI_API_KEY");
         var apiKey = !string.IsNullOrWhiteSpace(envKey)
             ? envKey
-            : configuration["Gemini:ApiKey"];
+            : configuration["AI:ApiKey"] ?? configuration["Gemini:ApiKey"];
 
         if (string.IsNullOrWhiteSpace(apiKey))
         {

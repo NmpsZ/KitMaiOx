@@ -1,13 +1,14 @@
 # 🍳 KitmaiOx — AI-Powered Recipe Kitchen
 
-**KitmaiOx** (คิดไม่ออก) is a modern, AI-powered web application that helps you discover what to cook based on the ingredients you already have in your fridge. Built with a React frontend and a .NET 8 backend, it leverages Google's Gemini AI to instantly generate delicious recipe ideas, complete with steps and macros.
+**KitmaiOx** (คิดไม่ออก) is a modern, AI-powered web application that helps you discover what to cook based on the ingredients you already have in your fridge. Built with a React frontend and a .NET 8 backend, it leverages powerful AI models to instantly generate delicious recipe ideas, complete with steps and macros.
 
+![KitmaiOx Overview](https://via.placeholder.com/800x450.png?text=KitmaiOx+Screenshot) <!-- Replace with your actual screenshot -->
 
 ## 🚀 Features
 
 - **Smart Ingredient Picker:** Choose from over 50+ ingredients across multiple categories.
 - **Client-Side Flavor Graph:** Instantly recommends complimentary ingredients (e.g., pairs Garlic with Pork) without consuming API tokens!
-- **Gemini AI Recipe Generation:** Sends your ingredients to Gemini 2.5 Flash to generate 3 custom, high-quality recipes with estimated calories, difficulty, and cooking time.
+- **AI Recipe Generation:** Sends your ingredients to an AI language model to generate 3 custom, high-quality recipes with estimated calories, difficulty, and cooking time.
 - **Search History & Favorites:** Tracks your search history and allows you to favorite recipes for later. Includes an instant search filter to find past results quickly.
 - **Interactive Metrics Dashboard:** View your most used ingredients and cooking stats in a clean UI.
 
@@ -23,7 +24,7 @@
 - **Framework:** ASP.NET Core 8 Web API
 - **Database:** PostgreSQL (hosted on Supabase)
 - **ORM:** Entity Framework Core
-- **AI Integration:** Google Gemini 1.5/2.5 Flash API
+- **AI Integration:** Large Language Models (LLMs) via API
 - **Authentication:** JWT (JSON Web Tokens)
 
 ---
@@ -46,8 +47,8 @@
      "ConnectionStrings": {
        "DefaultConnection": "Host=db.[project].supabase.co;Database=postgres;Username=postgres;Password=[password];SSL Mode=Require"
      },
-     "Gemini": {
-       "ApiKey": "YOUR_GEMINI_API_KEY",
+     "AI": {
+       "ApiKey": "YOUR_AI_API_KEY",
        "Model": "gemini-2.5-flash"
      },
      "Cors": {
@@ -91,7 +92,7 @@ Render natively supports Docker. We have included a `Dockerfile` in the `backend
 4. Set the **Root Directory** to `backend`.
 5. Add the following Environment Variables in Render:
    - `DATABASE_URL` : Your Supabase PostgreSQL connection string.
-   - `GEMINI_API_KEY` : Your Google Gemini API Key.
+   - `AI_API_KEY` : Your AI Provider API Key (e.g., Gemini).
    - `ALLOWED_ORIGINS` : The production URL of your frontend (e.g., `https://kitmaiox.vercel.app`).
    - `Jwt__Key` : A long, secure random string for signing JWT tokens.
 6. Click **Deploy**.
