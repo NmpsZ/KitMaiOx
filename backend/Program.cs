@@ -87,6 +87,28 @@ app.UseCors("KitmaiOxCors");
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapGet("/", () => Results.Ok(new
+{
+    name = "KitmaiOx API",
+    status = "ok",
+    message = "KitmaiOx API is running. Use /api/ingredients, /api/recipes/suggest, or /health.",
+    endpoints = new[]
+    {
+        "/api/ingredients",
+        "/api/ingredients/lookup?q=apple",
+        "/api/recipes/suggest",
+        "/api/favorites",
+        "/api/history",
+        "/api/stats"
+    }
+}));
+
+app.MapGet("/health", () => Results.Ok(new
+{
+    status = "healthy",
+    checkedAt = DateTimeOffset.UtcNow
+}));
+
 app.MapControllers();
 
 await DatabaseInitializer.InitializeAsync(app);
