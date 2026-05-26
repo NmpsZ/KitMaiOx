@@ -6,6 +6,12 @@ public static class DatabaseUrlParser
 {
     public static string ToNpgsqlConnectionString(string databaseUrl)
     {
+        // If it doesn't look like a URI (e.g. postgres://...), assume it's a standard connection string
+        if (!databaseUrl.Contains("://"))
+        {
+            return databaseUrl;
+        }
+
         var uri = new Uri(databaseUrl);
         var credentials = uri.UserInfo.Split(':', 2);
         var builder = new NpgsqlConnectionStringBuilder
