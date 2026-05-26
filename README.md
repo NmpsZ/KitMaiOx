@@ -2,8 +2,6 @@
 
 **KitmaiOx** (คิดไม่ออก) is a modern, AI-powered web application that helps you discover what to cook based on the ingredients you already have in your fridge. Built with a React frontend and a .NET 8 backend, it leverages powerful AI models to instantly generate delicious recipe ideas, complete with steps and macros.
 
-![KitmaiOx Overview](https://via.placeholder.com/800x450.png?text=KitmaiOx+Screenshot) <!-- Replace with your actual screenshot -->
-
 ## 🚀 Features
 
 - **Smart Ingredient Picker:** Choose from over 50+ ingredients across multiple categories.
@@ -107,6 +105,3 @@ Render natively supports Docker. We have included a `Dockerfile` in the `backend
 6. Click **Deploy**.
 
 ---
-
-## 📄 License
-This project is built as a portfolio piece to demonstrate full-stack development skills using modern C# LINQ, React, and AI integrations.
