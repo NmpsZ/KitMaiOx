@@ -29,7 +29,11 @@ public sealed class GeminiService(HttpClient httpClient, IConfiguration configur
 
         try
         {
-            var model = configuration["Gemini:Model"] ?? "gemini-2.5-flash";
+            var model = configuration["Gemini:Model"] ?? configuration["AI:Model"] ?? "gemini-2.5-flash";
+            if (model == "gemini-1.5-flash")
+            {
+                model = "gemini-2.5-flash";
+            }
             var endpoint = $"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={Uri.EscapeDataString(apiKey)}";
             var prompt = BuildPrompt(ingredients, language);
             var payload = new
@@ -105,7 +109,11 @@ public sealed class GeminiService(HttpClient httpClient, IConfiguration configur
 
         try
         {
-            var model = configuration["Gemini:Model"] ?? "gemini-2.5-flash";
+            var model = configuration["Gemini:Model"] ?? configuration["AI:Model"] ?? "gemini-2.5-flash";
+            if (model == "gemini-1.5-flash")
+            {
+                model = "gemini-2.5-flash";
+            }
             var endpoint = $"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={Uri.EscapeDataString(apiKey)}";
             var prompt = BuildIngredientValidationPrompt(cleanedQuery, language);
             var payload = new
